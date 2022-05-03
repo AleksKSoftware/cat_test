@@ -22,7 +22,7 @@ class PageRemoteMediator(
     }
 
     private suspend fun getRemoteKeyForLastItem(state: PagingState<Int, Book>): RemoteKeys? {
-        return state.pages.lastOrNull() { it.data.isNotEmpty() }?.data?.lastOrNull()
+        return state.pages.lastOrNull { it.data.isNotEmpty() }?.data?.lastOrNull()
             ?.let { repo ->
                 db.remoteKeysDao().remoteKeysRepoId(repo.id)
             }
@@ -96,7 +96,6 @@ class PageRemoteMediator(
             return MediatorResult.Error(exception)
         }
     }
-
 
     companion object {
         const val STARTING_PAGE_INDEX = 0

@@ -21,5 +21,3 @@ val EditText.afterTextChangedFlow: Flow<Editable?>
         val watcher = doAfterTextChanged { offer(it) }
         awaitClose { removeTextChangedListener(watcher) }
     }
-
-

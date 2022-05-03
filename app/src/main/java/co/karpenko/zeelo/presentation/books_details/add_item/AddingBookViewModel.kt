@@ -30,7 +30,7 @@ class AddingBookDialogViewModel @Inject constructor(
             event.value = Event.EmptyFields
         } else {
             viewModelScope.launch {
-                val book = Book(1, title,"http://dummyimage.com/243x100.png/dddddd/000000", author,price)
+                val book = Book(1, title, "http://dummyimage.com/243x100.png/dddddd/000000", author, price)
                 addingBookInteractor.addingBook(book).fold(
                     onSuccess = {
                         event.value = Event.AddedItem(book)
@@ -40,7 +40,6 @@ class AddingBookDialogViewModel @Inject constructor(
             }
         }
     }
-
 
     fun onFormTitleChanged(title: String) {
         this.title = title

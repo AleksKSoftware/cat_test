@@ -1,6 +1,5 @@
 package co.karpenko.zeelo.data.store
 
-
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import co.karpenko.zeelo.data.mapper.Book
@@ -12,7 +11,7 @@ import java.io.IOException
  * A [PagingSource] that loads articles for paging. The [Int] is the paging key or query that is used to fetch more
  * data, and the [Book] specifies that the [PagingSource] fetches an [Book] [List].
  */
-//The class could be replaced
+// The class could be replaced like a source of data for pagination list.
 class BookPagingSource(
     private val bookCloudStore: BooksCloudStore,
 ) : PagingSource<Int, Book>() {
@@ -21,7 +20,7 @@ class BookPagingSource(
         val position = params.key ?: STARTING_PAGE_INDEX
         val lastPosition = NETWORK_PAGE_SIZE + position
         return try {
-            val listBooks = bookCloudStore.getBooks(position,  lastPosition )
+            val listBooks = bookCloudStore.getBooks(position, lastPosition)
             val nextKey = if (listBooks.isEmpty()) {
                 null
             } else {

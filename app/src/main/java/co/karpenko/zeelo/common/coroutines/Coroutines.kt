@@ -9,7 +9,6 @@ import java.util.concurrent.Executors
  * java.karpenko@gmail.com
  */
 
-
 @Suppress("unused")
 val Dispatchers.Single
     get() = Executors.newSingleThreadExecutor().asCoroutineDispatcher()

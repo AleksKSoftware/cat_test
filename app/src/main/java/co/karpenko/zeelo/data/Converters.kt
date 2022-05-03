@@ -14,5 +14,4 @@ class Converters {
 
     @TypeConverter
     fun jsonToList(value: String) = Gson().fromJson(value, Array<Int>::class.java).toList()
-
 }

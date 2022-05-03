@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import co.karpenko.zeelo.R
 import co.karpenko.zeelo.presentation.books.adapter.BooksListAdapter
 import co.karpenko.zeelo.presentation.books_details.BookDetailsActivity.Companion.launch
-import co.karpenko.zeelo.presentation.books_details.add_item.AddingBookDialog
 import co.karpenko.zeelo.presentation.books_details.add_item.AddingBookDialog.Companion.show
 import co.karpenko.zeelo.presentation.widgets.ProgressStateAdapter
 import dagger.hilt.android.AndroidEntryPoint

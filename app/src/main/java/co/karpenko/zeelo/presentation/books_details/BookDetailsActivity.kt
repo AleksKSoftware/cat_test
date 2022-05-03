@@ -22,7 +22,7 @@ import kotlinx.android.synthetic.main.activity_book_details.*
 @AndroidEntryPoint
 class BookDetailsActivity : AppCompatActivity() {
 
-    private val viewModel: RocketDetailsViewModel by viewModels()
+    private val viewModel: BookDetailsViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

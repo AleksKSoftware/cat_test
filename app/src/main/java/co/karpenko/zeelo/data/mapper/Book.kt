@@ -1,9 +1,7 @@
 package co.karpenko.zeelo.data.mapper
 
-import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import kotlinx.android.parcel.Parcelize
 
 /**
  * Created by Alexander Karpenko on 02/05/22.
@@ -11,7 +9,6 @@ import kotlinx.android.parcel.Parcelize
  */
 
 @Entity(tableName = "books")
-@Parcelize
 data class Book(
     @PrimaryKey
     val id: Int,
@@ -19,5 +16,4 @@ data class Book(
     val image: String? = "",
     val author: String?,
     val price: String?,
-) : Parcelable
-
+)

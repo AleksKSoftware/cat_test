@@ -19,12 +19,11 @@ class ApiService @Inject constructor(
     gson: Gson,
 ) {
     private val content: String = context.assets.readFile("book_data.json")
-    private var listBooks = lazy  { gson.fromJson(content, Array<BookModel>::class.java).toMutableList() }.value
+    private var listBooks = lazy { gson.fromJson(content, Array<BookModel>::class.java).toMutableList() }.value
 
     fun getBooksModel(): List<BookModel> = listBooks
 
     fun getBookDetailsModel(id: Int): BookModel? = listBooks.firstOrNull { it.id == id }
-
 
     // It will send to server side and return id of the object.
     fun addBook(book: BookModel): List<BookModel> {

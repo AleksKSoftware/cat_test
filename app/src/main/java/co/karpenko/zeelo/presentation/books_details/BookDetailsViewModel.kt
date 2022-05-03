@@ -15,7 +15,7 @@ import javax.inject.Inject
  */
 
 @HiltViewModel
-class RocketDetailsViewModel @Inject constructor(
+class BookDetailsViewModel @Inject constructor(
     private val bookDetailsInteractor: BookDetailsInteractor,
 ) : ViewModel() {
 

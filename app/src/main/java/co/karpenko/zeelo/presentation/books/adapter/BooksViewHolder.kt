@@ -24,6 +24,5 @@ class BooksViewHolder(parent: ViewGroup) :
             .load(book?.image)
             .circleCrop()
             .into(ivCover)
-
     }
 }

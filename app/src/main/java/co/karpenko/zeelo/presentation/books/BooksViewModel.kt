@@ -19,5 +19,4 @@ class BooksViewModel @Inject constructor(
 ) : ViewModel() {
 
     val booksData: Flow<PagingData<Book>> = rocketsInteractor.fetchBooks()
-
 }
