@@ -10,10 +10,11 @@ import javax.inject.Inject
  */
 class AuthStore @Inject constructor() {
 
-    fun authByEmail(
+    suspend fun authByEmail(
         email: String,
         password: String?,
     ): AuthResult {
+        delay(1000)
         return AuthResult("token")
 
     }

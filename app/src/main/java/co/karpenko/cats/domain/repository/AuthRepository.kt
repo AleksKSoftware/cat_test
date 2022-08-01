@@ -1,6 +1,5 @@
 package co.karpenko.cats.domain.repository
 
-import co.karpenko.cats.data.entity.AuthResult
 import co.karpenko.cats.data.store.AuthStore
 import javax.inject.Inject
 
@@ -10,8 +9,8 @@ import javax.inject.Inject
  */
 class AuthRepository @Inject constructor(private val authStore: AuthStore) {
 
-     fun signIn(
+    suspend fun signIn(
         email: String,
         password: String?,
-    ) = "token"
+    ) = authStore.authByEmail(email, password)
 }
