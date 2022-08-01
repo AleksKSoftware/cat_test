@@ -6,4 +6,14 @@
         <item name="android:windowMinWidthMajor">100%</item>
         <item name="android:windowMinWidthMinor">100%</item>
     </style>
+
+    <style name="ExploreSearchInput">
+        <item name="android:background">@color/secondary_black</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorHint">@color/white</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:imeOptions">actionSearch</item>
+        <item name="android:inputType">textShortMessage</item>
+    </style>
+
 </resources>

@@ -40,6 +40,20 @@ android {
             option("-Adagger.hilt.android.internal.disableAndroidSuperclassValidation=true")
         }
     }
+    buildFeatures {
+        viewBinding true
+    }
+    testOptions {
+        execution 'ANDROIDX_TEST_ORCHESTRATOR'
+
+        unitTests.all {
+            useJUnitPlatform() // <--- this is the important part
+        }
+    }
+
+    defaultConfig {
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
 }
 
 dependencies {
@@ -63,6 +77,14 @@ dependencies {
     implementation "androidx.room:room-ktx:2.4.2"
     implementation "androidx.room:room-runtime:2.4.2"
     implementation 'androidx.room:room-paging:2.4.2'
+    implementation 'androidx.annotation:annotation:1.4.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testImplementation 'org.junit.jupiter:junit-jupiter'
     kapt "androidx.room:room-compiler:2.4.2"
 
     //Pagination
@@ -76,4 +98,15 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    testImplementation 'org.mockito:mockito-inline:2.13.0'
+
+    def mockitoCoreVersion = "3.10.0"
+    testImplementation "org.mockito:mockito-core:$mockitoCoreVersion"
+    def archCoreTest = "2.1.0"
+    testImplementation "androidx.arch.core:core-testing:$archCoreTest"
+    def coroutinesTest = "1.3.4"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesTest"
+    def mockWebserverVersion = "4.7.2"
+    testImplementation "com.squareup.okhttp3:mockwebserver:$mockWebserverVersion"
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.7.1'
 }
